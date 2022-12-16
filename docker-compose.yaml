@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  jenkins:
+    driver: bridge
+
+services:
+    jenkins_dell:
+        image: jenkins/jenkins:jdk11
+        networks:
+          - jenkins
+        volumes:
+          - C:\Users\jeans\Downloads\jenkins:/var/jenkins_home
+        ports:
+          - "8080:8080"
+        restart: always
